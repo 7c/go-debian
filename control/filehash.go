@@ -129,6 +129,12 @@ func (c *FileHash) unmarshalControl(algorithm, data string) error {
 	//still first value is the filename and then the hash
 	data = strings.TrimSuffix(data, "obsolete")
 
+	// lets skip lines they contain 'remove-on-upgrade', they do not contain hash
+	if strings.Contains(data, "remove-on-upgrade") {
+		// fmt.Println("skipping", data)
+		return nil
+	}
+
 	vals := strings.Fields(data)
 
 	switch len(vals) {
@@ -136,6 +142,7 @@ func (c *FileHash) unmarshalControl(algorithm, data string) error {
 		c.Hash = vals[0]
 		c.Size, err = strconv.ParseInt(vals[1], 10, 64)
 		if err != nil {
+			// fmt.Println(vals, data)
 			return err
 		}
 		c.Filename = vals[2]

@@ -18,7 +18,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE. }}} */
 
-package control // import "pault.ag/go/debian/control"
+package control // import "github.com/7c/go-debian/control"
 
 import (
 	"bufio"
@@ -26,7 +26,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"pault.ag/go/debian/dependency"
+	"github.com/7c/go-debian/dependency"
+	"github.com/7c/go-debian/version"
 )
 
 // Encapsulation for a debian/control file, which is a series of RFC2822-like
@@ -81,6 +82,7 @@ type BinaryParagraph struct {
 	Package       string
 	Priority      string
 	Section       string
+	Version       version.Version
 	Essential     bool
 	Description   string
 	Conffiles     []MD5FileHash `delim:"\n" strip:"\n\r\t "`

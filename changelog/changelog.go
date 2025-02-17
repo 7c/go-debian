@@ -18,7 +18,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE. }}} */
 
-package changelog // import "pault.ag/go/debian/changelog"
+package changelog // import "github.com/7c/go-debian/changelog"
 
 import (
 	"bufio"
@@ -28,7 +28,7 @@ import (
 	"strings"
 	"time"
 
-	"pault.ag/go/debian/version"
+	"github.com/7c/go-debian/version"
 )
 
 // A ChangelogEntry is the encapsulation for each entry for a given version

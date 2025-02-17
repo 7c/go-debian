@@ -4,9 +4,9 @@ import (
 	"strings"
 	"testing"
 
-	"pault.ag/go/debian/control"
-	"pault.ag/go/debian/dependency"
-	"pault.ag/go/debian/version"
+	"github.com/7c/go-debian/control"
+	"github.com/7c/go-debian/dependency"
+	"github.com/7c/go-debian/version"
 )
 
 type TestStruct struct {

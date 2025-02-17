@@ -1,4 +1,4 @@
-module pault.ag/go/debian
+module github.com/7c/go-debian
 
 go 1.19
 

@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"pault.ag/go/debian/deb"
+	"github.com/7c/go-debian/deb"
 )
 
 /*
